@@ -1,3 +1,4 @@
+import React from 'react';
 import './index.scss'
 import LogoS from '../../Assets/images/logo-s.png'
 import LogoSubtitle from '../../Assets/images/logo_sub.png'
@@ -15,7 +16,7 @@ const Sidebar = () => {
     <div className="nav-bar">
       <Link className="logo" to="/">
         <img src={LogoS} alt="Logo" />
-        <img className="sub-logo" src={LogoSubtitle} alt="slobodan" />
+        {/* <img className="sub-logo" src={LogoSubtitle} alt="Lamont" /> */}
       </Link>
       <nav>
         <NavLink exact="true" activeclassname="active" to="/">
