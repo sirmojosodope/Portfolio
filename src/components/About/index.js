@@ -18,7 +18,7 @@ const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
   useEffect(() => {
-     Timeout()
+    Timeout()
   }, [])
 
   const Timeout = () => {
@@ -39,40 +39,38 @@ const About = () => {
             />
           </h1>
           <p>
-            I'm very ambitious full stack developer looking for a role in
-            established IT company with the opportunity to work with the latest
-            technologies on challenging and diverse projects.
+          Logical and results-driven full stack developer dedicated to building and optimizing user-focused websites and applications. Judicious and creative when crafting effective websites, apps, and platforms to propel competitive advantage and revenue growth. Technically proficient and analytical problem solver with a calm and focused demeanor
           </p>
           <p align="LEFT">
             I'm quietly confident, naturally curious, and perpetually working on
-            improving my chops one  problem at a time.
+            improving my chops one problem at a time.
           </p>
           <p>
-            If I need to define myself in one sentence that would be a family
-            oriented person, creative thinker, dedicated,
-            game enthusiast, and tech-obsessed!!!
+            If I need to define myself in one sentence that would be a creative thinker, 
+            family oriented person, dedicated, game enthusiast, and
+            tech-obsessed!!!
           </p>
         </div>
 
         <div className="stage-cube-cont">
           <div className="cubespinner">
             <div className="face1">
-              <FontAwesomeIcon icon={faAngular} color="#DD0031" />
-            </div>
-            <div className="face2">
               <FontAwesomeIcon icon={faHtml5} color="#F06529" />
             </div>
-            <div className="face3">
+            <div className="face2">
               <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
             </div>
-            <div className="face4">
+            <div className="face3">
               <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
             </div>
-            <div className="face5">
+            <div className="face4">
               <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
             </div>
-            <div className="face6">
+            <div className="face5">
               <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
+              <div className="face6">
+                <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
+              </div>
             </div>
           </div>
         </div>

@@ -9,9 +9,8 @@ import './index.scss'
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
-  const nameArray = ['a', 'm', 'o', 'n', 't',]
+  const nameArray = ['a', 'm', 'o', 'n', 't']
   const jobArray = [
-    
     'f',
     'u',
     'l',
@@ -36,10 +35,10 @@ const Home = () => {
   ]
 
   useEffect(() => {
-  Timeout()
+    Timeout()
   }, [])
 
-  const Timeout = () =>{
+  const Timeout = () => {
     return setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 4000)
@@ -57,7 +56,7 @@ const Home = () => {
             <span className={`${letterClass} _14`}>'m</span>
             <br />
             <span className={`${letterClass} _14`}>L</span>
-           
+
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameArray}
