@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
-import LogoTitle from '../../Assets/images/logo-s.png'
+import LogoTitle from '../../Assets/images/pinkisland.png'
 import Logo from './Logo'
 import './index.scss'
 
@@ -66,7 +66,7 @@ const Home = () => {
             <AnimatedLetters
               letterClass={letterClass}
               strArray={jobArray}
-              idx={22}
+              idx={15}
             />
           </h1>
           <h2>Full Stack Developer / JavaScript Expert /</h2>

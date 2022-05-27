@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss'
-import LogoS from '../../Assets/images/logo-s.png'
+import LogoS from '../../Assets/images/pinkisland.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedin,
