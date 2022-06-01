@@ -2,7 +2,6 @@ import React from 'react'
 
 import { useEffect, useState } from 'react'
 import {
-  faAngular,
   faCss3,
   faGitAlt,
   faHtml5,
