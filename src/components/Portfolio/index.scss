@@ -1,0 +1,30 @@
+.portfolio-items {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+
+  .project {
+    flex: 1 1 45%;
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    a {
+      display: block;
+      margin-top: 0.5rem;
+      color: #F806CC;
+      font-size: 14px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

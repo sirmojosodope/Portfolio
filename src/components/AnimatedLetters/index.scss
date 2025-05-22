@@ -1,27 +1,36 @@
 .text-animate {
-    display: inline-block;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease-out forwards;
+  min-width: 0.6rem;
+}
+
+.text-animate-hover {
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    color: #b69f94;
+    transform: scale(1.05);
+  }
+}
+
+// Subtle staggered delay
+@for $i from 1 through 35 {
+  .text-animate._#{$i} {
+    animation-delay: #{($i * 0.05)}s;
+  }
+}
+
+// Clean fade-up entrance
+@keyframes fadeUp {
+  from {
     opacity: 0;
-    animation: bounceIn;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    min-width: 10px;
+    transform: translateY(20px);
   }
-  
-  .text-animate-hover {
-    min-width: 10px;
-    display: inline-block;
-    animation-fill-mode: both;
-  
-    &:hover {
-      animation: rubberBand 1s;
-      color: #F01D7F;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @for $i from 1 through 35 {
-    .text-animate._#{$i} {
-      animation-delay: #{$i / 10}s;
-    }
-  }
-  
+}

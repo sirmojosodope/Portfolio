@@ -11,18 +11,18 @@ const Home = () => {
 
   const nameArray = ['a', 'm', 'o', 'n', 't']
   const jobArray = [
-    'f',
+    'F',
     'u',
     'l',
     'l',
     ' ',
-    's',
+    'S',
     't',
     'a',
     'c',
     'k',
     ' ',
-    'd',
+    'D',
     'e',
     'v',
     'e',

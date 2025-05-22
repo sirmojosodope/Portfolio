@@ -10,6 +10,7 @@ import {
   faSass,
   faTypeScript,
   faNpm,
+  faDocker,
 } from '@fortawesome/free-brands-svg-icons'
 
 import './index.scss'
@@ -70,11 +71,7 @@ const About = () => {
       <FontAwesomeIcon icon={faNpm} color="#CD6799" />
     </div>
     <div className="face6">
-      <img
-        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-        alt="TypeScript"
-        style={{ width: '50px', height: '50px' }}
-      />
+      <FontAwesomeIcon icon={faDocker} />
     </div>
   </div>
 </div>

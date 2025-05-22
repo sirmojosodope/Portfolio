@@ -1,117 +1,105 @@
 .contact-form {
-    width: 100%;
-    margin-top: 20px;
-  
-    ul {
-      padding: 0;
-      margin: 0;
-  
-      li {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        margin-bottom: 10px;
-        opacity: 0;
-        overflow: hidden;
-        display: block;
-        clear: both;
-        position: relative;
-        animation: fadeInUp 2s 2s;
-        animation-fill-mode: forwards;
-      }
-  
-      li.half {
-        width: 49%;
-        margin-left: 2%;
-        float: left;
-        clear: none;
-  
-        &:first-child {
-          margin-left: 0;
-        }
-      }
+  width: 100%;
+  margin-top: 2rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      overflow: hidden;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
     }
-  
-    input[type='text'],
-    input[type='email'] {
-      width: 100%;
-      border: 0;
-      background: #115173;
-      height: 50px;
-      font-size: 16px;
-      color: #fff;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-  
-    textarea {
-      width: 100%;
-      border: 0;
-      background: #115173;
-      height: 50px;
-      font-size: 16px;
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-      min-height: 150px;
-    }
-  
-    .flat-button {
-      color: #F806CC;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-decoration: none;
-      padding: 8px 10px;
-      border: 1px solid #F806CC;
+
+    li.half {
+      width: 48%;
       float: left;
-      border-radius: 4px;
-      background: 0 0;
-      text-transform: uppercase;
-      float: right;
-      text-align: center;
-      margin-right: 10px;
-    }
-  }
-  
-  .map-wrap {
-    background: rgba(8, 253, 216, 0.1);
-    float: right;
-    width: 53%;
-    height: 115%;
-    margin-top: -3%;
-  }
-  
-  .leaflet-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    animation: backInRight 1s 1.2s;
-    animation-fill-mode: forwards;
-  }
-  
-  .info-map {
-    position: absolute;
-    background: #000;
-    top: 50px;
-    right: 30%;
-    z-index: 999999;
-    width: 267px;
-    padding: 20px;
-    color: #fff;
-    font-family: 'Helvetica';
-    font-size: 17px;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeIn 1s 1.5s;
-    animation-fill-mode: forwards;
-  
-    span {
-      font-size: 16px;
-  
-      span {
-        color: #F806CC;
+      margin-right: 4%;
+
+      &:nth-child(2n) {
+        margin-right: 0;
       }
     }
   }
-  
+
+  input[type='text'],
+  input[type='email'],
+  textarea {
+    width: 100%;
+    border: 1px solid #dcd5cc;
+    background: #f9f7f5;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #2f2d2b;
+    font-family: 'Helvetica Neue', sans-serif;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: #b69f94;
+      outline: none;
+    }
+  }
+
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  .flat-button {
+    float: right;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    color: #b69f94;
+    border: 1px solid #b69f94;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background: #b69f94;
+      color: #f5f3f0;
+    }
+  }
+}
+
+.map-wrap {
+  background: #ece8e3;
+  float: right;
+  width: 50%;
+  height: 100%;
+  margin-top: 0;
+  border-left: 1px solid #dcd5cc;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.2s forwards;
+}
+
+.info-map {
+  position: absolute;
+  top: 2rem;
+  right: 30%;
+  background: #1e1d1b;
+  color: #f5f3f0;
+  padding: 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 260px;
+  font-family: 'Helvetica Neue', sans-serif;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.5s forwards;
+
+  span span {
+    color: #b69f94;
+  }
+}
