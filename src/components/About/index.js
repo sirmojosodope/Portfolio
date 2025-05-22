@@ -1,30 +1,28 @@
-import React from 'react'
-
-import { useEffect, useState } from 'react'
-import {
-  faCss3,
-  faGitAlt,
-  faHtml5,
-  faJsSquare,
-  faReact,
-} from '@fortawesome/free-brands-svg-icons'
+import React, { useEffect, useState } from 'react'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faGithub,
+  faReact,
+  faNodeJs,
+  faJs,
+  faSass,
+  faTypeScript,
+  faNpm,
+} from '@fortawesome/free-brands-svg-icons'
+
 import './index.scss'
 
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
   useEffect(() => {
-    Timeout()
-  }, [])
-
-  const Timeout = () => {
-    return setTimeout(() => {
+    const timeout = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 3000)
-  }
+    return () => clearTimeout(timeout)
+  }, [])
 
   return (
     <>
@@ -38,41 +36,48 @@ const About = () => {
             />
           </h1>
           <p>
-          Logical and results-driven full stack developer dedicated to building and optimizing user-focused websites and applications. Judicious and creative when crafting effective websites, apps, and platforms to propel competitive advantage and revenue growth. Technically proficient and analytical problem solver with a calm and focused demeanor
+            Logical and results-driven full stack developer dedicated to building and
+            optimizing user-focused websites and applications. Judicious and creative
+            when crafting effective websites, apps, and platforms to propel competitive
+            advantage and revenue growth. Technically proficient and analytical problem
+            solver with a calm and focused demeanor.
           </p>
-          <p align="LEFT">
+          <p>
             I'm quietly confident, naturally curious, and perpetually working on
             improving my chops one problem at a time.
           </p>
           <p>
-            If I need to define myself in one sentence that would be a creative thinker, 
-            family oriented person, dedicated, game enthusiast, and
-            tech-obsessed!!!
+            If I need to define myself in one sentence that would be: creative thinker,
+            family-oriented, dedicated, game enthusiast, and tech-obsessed.
           </p>
         </div>
 
         <div className="stage-cube-cont">
-          <div className="cubespinner">
-            <div className="face1">
-              <FontAwesomeIcon icon={faHtml5} color="#F06529" />
-            </div>
-            <div className="face2">
-              <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
-            </div>
-            <div className="face3">
-              <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-            </div>
-            <div className="face4">
-              <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
-            </div>
-            <div className="face5">
-              <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
-              <div className="face6">
-                <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-              </div>
-            </div>
-          </div>
-        </div>
+  <div className="cubespinner">
+    <div className="face1">
+      <FontAwesomeIcon icon={faGithub} color="#171515" />
+    </div>
+    <div className="face2">
+      <FontAwesomeIcon icon={faReact} color="#61DAFB" />
+    </div>
+    <div className="face3">
+      <FontAwesomeIcon icon={faNodeJs} color="#3C873A" />
+    </div>
+    <div className="face4">
+      <FontAwesomeIcon icon={faJs} color="#F7DF1E" />
+    </div>
+    <div className="face5">
+      <FontAwesomeIcon icon={faNpm} color="#CD6799" />
+    </div>
+    <div className="face6">
+      <img
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+        alt="TypeScript"
+        style={{ width: '50px', height: '50px' }}
+      />
+    </div>
+  </div>
+</div>
       </div>
       <Loader type="pacman" />
     </>
