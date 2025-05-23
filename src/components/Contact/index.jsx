@@ -17,18 +17,26 @@ const Contact = () => {
   }, [])
 
   const sendEmail = (e) => {
-    e.preventDefault()
+  e.preventDefault()
 
-    emailjs
-      .sendForm('gmail', 'template_xxxxxx', formRef.current, '7ieVoWvTEkJ3o-NKq')
-      .then(() => {
-        alert('Transmission sent.')
-        window.location.reload()
-      })
-      .catch(() => {
-        alert('Transmission failed. Try again.')
-      })
-  }
+  emailjs.sendForm(
+    'pinkisland', // ✅ Your Service ID
+    'template_yrud5pr', // ✅ Your Template ID
+    formRef.current,
+    '7ieVoWvTEkJ3o-Nk4' // ✅ Your Public Key
+  )
+  .then(
+    () => {
+      alert('Transmission sent.')
+      window.location.reload()
+    },
+    (error) => {
+      console.log('FAILED...', error)
+      alert('Transmission failed. Try again.')
+    }
+  )
+}
+
 
   return (
     <>
