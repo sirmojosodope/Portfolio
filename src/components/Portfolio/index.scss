@@ -1,0 +1,88 @@
+.portfolio-page {
+  .text-zone {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 40%;
+    color: #e0ddd7;
+
+    h1 {
+      font-family: 'Coolvetica';
+      font-size: 56px;
+      color: #f7d417;
+
+      &:before {
+        content: '<h1>';
+        font-family: 'La Belle Aurore';
+        color: #f806cc66;
+        font-size: 18px;
+        position: absolute;
+        margin-top: -40px;
+        left: -15px;
+        opacity: 0.6;
+      }
+
+      &:after {
+        content: '</h1>';
+        font-family: 'La Belle Aurore';
+        color: #f806cc66;
+        font-size: 18px;
+        position: absolute;
+        margin-top: 18px;
+        margin-left: 20px;
+        opacity: 0.6;
+      }
+    }
+
+    .fragment {
+      font-family: monospace;
+      color: #bcb7af;
+      font-size: 13px;
+      margin: 0;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+
+      &:nth-of-type(2) {
+        animation-delay: 1.5s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 2s;
+      }
+    }
+
+    .final {
+      color: #f806ccaa;
+    }
+  }
+
+  .stage-void {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #f806cc33 10%, transparent 70%);
+    border: 1px dashed #f806cc44;
+    border-radius: 50%;
+    animation: pulse 2.5s infinite;
+    box-shadow: 0 0 10px #f806cc33;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,65 @@
+/* Core root sizing */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* Global body baseline */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Coolvetica', 'Helvetica Neue', sans-serif;
+  background-color: #121212; /* deep black-charcoal */
+  color: #e0ddd7; /* soft chalk white */
+  font-size: 1.4rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* Headings — consistent with portal tone */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Coolvetica', 'Helvetica Neue', sans-serif;
+  color: #e0ddd7;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+/* Paragraphs and base text */
+p {
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #bcb7af; /* soft bone */
+  font-size: 1.4rem;
+  margin: 0 0 1.5rem;
+}
+
+/* Strong text emphasis */
+strong {
+  color: #f806cc;
+  font-weight: 500;
+}
+
+/* Universal reset for form elements */
+input,
+textarea,
+button {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.4rem;
+  color: #e0ddd7;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Anchor links */
+a {
+  color: #f806cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0 0 6px #f806cc66;
+}

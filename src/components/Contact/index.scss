@@ -1,0 +1,160 @@
+.contact-page {
+  .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    max-height: 90%;
+
+    h1 {
+      color: #f7d417;
+      font-size: 56px;
+      font-family: 'Coolvetica';
+      font-weight: 400;
+      margin: 0;
+      line-height: 1;
+
+      &:before {
+        content: '<h1>';
+        font-family: 'La Belle Aurore', cursive;
+        color: #a8758b;
+        font-size: 18px;
+        position: absolute;
+        margin-top: -40px;
+        left: -15px;
+        opacity: 0.5;
+      }
+
+      &:after {
+        content: '</h1>';
+        font-family: 'La Belle Aurore', cursive;
+        color: #a8758b;
+        font-size: 18px;
+        position: absolute;
+        margin-top: 18px;
+        margin-left: 20px;
+        opacity: 0.5;
+        animation: fadeIn 1s 1.5s backwards;
+      }
+    }
+
+    .ritual {
+      margin-top: 30px;
+      font-family: monospace;
+      font-size: 14px;
+      color: #e0ddd7;
+
+      p {
+        margin: 0 0 10px;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeIn 1s ease forwards;
+
+        &:nth-child(1) { animation-delay: 1.2s; }
+        &:nth-child(2) { animation-delay: 1.5s; }
+        &:nth-child(3) { animation-delay: 1.8s; }
+      }
+
+      .highlight {
+        color: #f806cc;
+        font-weight: bold;
+      }
+    }
+
+    .contact-form {
+      margin-top: 40px;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+
+        li {
+          flex: 1 1 100%;
+
+          &.half {
+            flex: 1 1 48%;
+          }
+
+          input,
+          textarea {
+            width: 100%;
+            background: transparent;
+            border: 1px solid #b69f94;
+            color: #e0ddd7;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            padding: 12px;
+            resize: none;
+            outline: none;
+
+            &::placeholder {
+              color: #8a817c;
+            }
+
+            &:focus {
+              border-color: #f806cc;
+              box-shadow: 0 0 4px #f806cc44;
+              transition: 0.3s ease;
+            }
+          }
+
+          textarea {
+            height: 150px;
+          }
+
+          .flat-button {
+            background: transparent;
+            border: 1px solid #b69f94;
+            color: #b69f94;
+            padding: 12px 18px;
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s ease;
+
+            &:hover {
+              background: #b69f94;
+              color: #1d1d1d;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .info-zone {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    text-align: right;
+
+    .location-blip {
+      font-family: monospace;
+      color: #a59f94;
+      font-size: 13px;
+      opacity: 0.6;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1s 2.2s backwards;
+
+      .contact-email {
+        display: block;
+        margin-top: 4px;
+        color: #bcb7af;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

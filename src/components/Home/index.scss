@@ -1,0 +1,93 @@
+.home-page {
+  .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 1.5s ease 0.8s;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    h1.phase-text {
+      font-family: 'Coolvetica';
+      font-size: 64px;
+      color: #f7d417;
+      line-height: 1;
+      animation: flickerFade 2.8s ease-out forwards;
+      letter-spacing: -1px;
+
+      &::before {
+        content: '<h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 18px;
+        color: #f806cc66;
+        position: absolute;
+        transform: translateY(-40px);
+        opacity: 0.5;
+      }
+
+      &::after {
+        content: '</h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 18px;
+        color: #f806cc66;
+        position: absolute;
+        transform: translateY(12px) translateX(20px);
+        opacity: 0.5;
+      }
+    }
+
+    .sub-text {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #e0ddd7;
+      margin-top: 20px;
+      letter-spacing: 1px;
+      animation: fadeIn 2s ease 2s forwards;
+      opacity: 0;
+    }
+
+    .flat-button {
+      margin-top: 40px;
+      padding: 10px 22px;
+      font-size: 12px;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #b69f94;
+      border: 1px solid #b69f94;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transition: background 0.3s ease, color 0.3s ease;
+      display: inline-block;
+
+      &:hover {
+        background: #b69f94;
+        color: #1d1d1d;
+      }
+    }
+  }
+}
+
+@keyframes flickerFade {
+  0% {
+    opacity: 0;
+    filter: brightness(150%);
+  }
+  50% {
+    opacity: 0.3;
+    filter: brightness(180%);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(100%);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,88 @@
+.nav-bar {
+  background: #1e1d1b;
+  width: 60px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+
+  .logo {
+    img {
+      width: 32px;
+      opacity: 0.85;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+
+    a {
+      position: relative;
+      font-size: 2rem;
+      color: #7a7470;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &.active {
+        color: #f7d417;
+
+        &:after {
+          opacity: 1;
+        }
+
+        svg {
+          opacity: 0.4;
+        }
+      }
+
+      &::after {
+        content: attr(data-label);
+        position: absolute;
+        left: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        color: #f7d417;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+    }
+
+    .about-link::after    { content: 'ABOUT'; }
+    .contact-link::after  { content: 'CONTACT'; }
+    .portfolio-link::after{ content: 'PORTAL'; }
+    a:first-child::after  { content: 'HOME'; }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    li a {
+      font-size: 1.6rem;
+      color: #7a7470;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #f7d417;
+      }
+    }
+  }
+}

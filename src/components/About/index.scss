@@ -1,0 +1,116 @@
+.about-page {
+  position: relative;
+
+  .text-zone {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 40%;
+    z-index: 2;
+
+    h1 {
+      font-family: 'Coolvetica';
+      font-size: 56px;
+      color: #f7d417;
+      margin: 0;
+
+      &:before {
+        content: '<h1>';
+        font-family: 'La Belle Aurore';
+        color: #f806cc66;
+        font-size: 18px;
+        position: absolute;
+        margin-top: -40px;
+        left: -15px;
+        opacity: 0.6;
+      }
+
+      &:after {
+        content: '</h1>';
+        font-family: 'La Belle Aurore';
+        color: #f806cc66;
+        font-size: 18px;
+        position: absolute;
+        margin-top: 18px;
+        margin-left: 20px;
+        opacity: 0.6;
+      }
+    }
+
+    .ritual {
+      margin-top: 30px;
+      font-family: monospace;
+      color: #bcb7af;
+      font-size: 13px;
+      line-height: 1.8;
+      animation: fadeIn 1s ease forwards;
+
+      .mono {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeIn 0.6s ease forwards;
+      }
+
+      .mono:nth-child(1) { animation-delay: 1.2s; }
+      .mono:nth-child(2) { animation-delay: 1.5s; }
+      .mono:nth-child(3) { animation-delay: 1.8s; }
+      .mono.highlight {
+        color: #f806ccaa;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .aura-container {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #f806cc33 10%, transparent 70%);
+    border: 1px dashed #f806cc44;
+    box-shadow: 0 0 20px #f806cc33;
+    animation: pulse 2.5s infinite;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 340px;
+      height: 340px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(248, 6, 204, 0.08), transparent 60%);
+      box-shadow: 0 0 60px 20px rgba(248, 6, 204, 0.06), 0 0 90px 30px rgba(255, 255, 255, 0.02);
+      filter: blur(4px);
+      z-index: -1;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
