@@ -1,82 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
-import LogoTitle from '../../Assets/images/pinkisland.png'
 import Logo from './Logo'
 import './index.scss'
 
 const Home = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
-
-  const nameArray = ['a', 'm', 'o', 'n', 't']
-  const jobArray = [
-    'F',
-    'u',
-    'l',
-    'l',
-    ' ',
-    'S',
-    't',
-    'a',
-    'c',
-    'k',
-    ' ',
-    'D',
-    'e',
-    'v',
-    'e',
-    'l',
-    'o',
-    'p',
-    'e',
-    'r',
-    '.',
-  ]
+  const [textVisible, setTextVisible] = useState(false)
 
   useEffect(() => {
-    Timeout()
+    const timeout = setTimeout(() => {
+      setTextVisible(true)
+    }, 1800)
+    return () => clearTimeout(timeout)
   }, [])
-
-  const Timeout = () => {
-    return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 4000)
-  }
 
   return (
     <>
       <div className="container home-page">
-        <div className="text-zone">
-          <h1>
-            <span className={letterClass}>H</span>
-            <span className={`${letterClass} _12`}>i,</span>
-            <br />
-            <span className={`${letterClass} _13`}>I</span>
-            <span className={`${letterClass} _14`}>'m</span>
-            <br />
-            <span className={`${letterClass} _14`}>L</span>
-
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={nameArray}
-              idx={15}
-            />
-            <br />
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={jobArray}
-              idx={15}
-            />
-          </h1>
-          <h2>Full Stack Developer / JavaScript Expert /</h2>
+        <div className={`text-zone ${textVisible ? 'visible' : ''}`}>
+          <h1 className="phase-text">Pinkisland</h1>
+          <p className="sub-text">entry confirmed — threshold stable</p>
           <Link to="/contact" className="flat-button">
-            CONTACT ME
+            OPEN CHANNEL
           </Link>
         </div>
         <Logo />
       </div>
-
       <Loader type="pacman" />
     </>
   )

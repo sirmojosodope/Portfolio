@@ -20,14 +20,17 @@ const Portfolio = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={['P', 'o', 'r', 't', 'f', 'o', 'l', 'i', 'o']}
+              strArray={['P', 'o', 'r', 't', 'a', 'l']}
               idx={15}
             />
           </h1>
-          <p>
-            This page displays projects that I have worked on or contributed to.
-            I’ll be updating this regularly with new builds as a full-stack dev.
-          </p>
+          <p className="fragment">no artifacts // yet</p>
+          <p className="fragment">this space is held for transmission</p>
+          <p className="fragment final">standby for emergence</p>
+        </div>
+
+        <div className="stage-void">
+          <div className="signal-pulse"></div>
         </div>
       </div>
       <Loader type="pacman" />

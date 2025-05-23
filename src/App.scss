@@ -1,8 +1,5 @@
 $primary-color: #f7d417;
 
-@import 'animate.css';
-@import '~loaders.css/src/animations/pacman.scss';
-
 // Font-face definitions
 @font-face {
   font-family: 'Helvetica Neue';
@@ -27,13 +24,57 @@ $primary-color: #f7d417;
   font-style: normal;
 }
 
-// Base input styles
+// Base typography
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #e0ddd7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: 'Coolvetica';
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #bcb7af;
+}
+
+// Input aesthetics
 input,
 textarea {
   font-family: 'Helvetica Neue', sans-serif;
+  background: none;
+  border: 1px solid #b69f94;
+  padding: 10px;
+  font-size: 1.3rem;
+  color: #e0ddd7;
+  outline: none;
+
+  &::placeholder {
+    color: #8a817c;
+  }
+
+  &:focus {
+    border-color: #f806cc;
+    box-shadow: 0 0 5px #f806cc55;
+    transition: 0.3s ease;
+  }
 }
 
-// Loader states
+// Loader visibility
 .loader-hidden {
   display: none;
 }
@@ -46,4 +87,32 @@ textarea {
   width: 50px;
   height: 50px;
   animation: fadeOut 1s 1s forwards;
+}
+
+// Utility classes
+.flat-button {
+  font-size: 13px;
+  font-family: sans-serif;
+  letter-spacing: 4px;
+  padding: 10px 18px;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid #b69f94;
+  color: #b69f94;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #b69f94;
+    color: #1d1d1d;
+  }
+}
+
+@import 'animate.css';
+@import '~loaders.css/src/animations/pacman.scss';
+.mono {
+  font-family: monospace;
+  font-size: 13px;
+  color: #e0ddd7;
+  line-height: 1.8;
 }

@@ -1,39 +1,33 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Loader from 'react-loaders'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import AnimatedLetters from '../AnimatedLetters'
+import PortalAura from '../About/PortalAura'
 import './index.scss'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const form = useRef()
+  const formRef = useRef(null)
 
   useEffect(() => {
-    Timeout()
-  }, [])
-
-  const Timeout = () => {
-    return setTimeout(() => {
+    const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 3000)
-  }
+    return () => clearTimeout(timer)
+  }, [])
 
   const sendEmail = (e) => {
     e.preventDefault()
 
     emailjs
-      .sendForm('gmail', 'template_YeJhZkgb', form.current, 'your-token')
-      .then(
-        () => {
-          alert('Message successfully sent!')
-          window.location.reload(false)
-        },
-        () => {
-          alert('Failed to send the message, please try again')
-        }
-      )
+      .sendForm('gmail', 'template_xxxxxx', formRef.current, 'your-public-key')
+      .then(() => {
+        alert('Transmission sent.')
+        window.location.reload()
+      })
+      .catch(() => {
+        alert('Transmission failed. Try again.')
+      })
   }
 
   return (
@@ -43,69 +37,68 @@ const Contact = () => {
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
-              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
+              strArray={['C', 'o', 'n', 't', 'a', 'c', 't']}
               idx={15}
             />
           </h1>
-          <p>
-            I am interested in freelance opportunities - especially ambitious or
-            large projects. However, if you have other request or question,
-            don't hesitate to contact me using below form either.
-          </p>
-          <div className="contact-form">
-            <form ref={form} onSubmit={sendEmail}>
-              <ul>
-                <li className="half">
-                  <input placeholder="Name" type="text" name="name" required />
-                </li>
-                <li className="half">
-                  <input
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    required
-                  />
-                </li>
-                <li>
-                  <input
-                    placeholder="Subject"
-                    type="text"
-                    name="subject"
-                    required
-                  />
-                </li>
-                <li>
-                  <textarea
-                    placeholder="Message"
-                    name="message"
-                    required
-                  ></textarea>
-                </li>
-                <li>
-                  <input type="submit" className="flat-button" value="SEND" />
-                </li>
-              </ul>
-            </form>
+
+          <div className="ritual">
+            <p className="mono">:: send signal //</p>
+            <p className="mono">— silent channel open</p>
+            <p className="mono highlight">standby for emergence...</p>
           </div>
+
+          <form ref={formRef} onSubmit={sendEmail} className="contact-form">
+            <ul>
+              <li className="half">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  required
+                  autoComplete="off"
+                />
+              </li>
+              <li className="half">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  autoComplete="off"
+                />
+              </li>
+              <li>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                />
+              </li>
+              <li>
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  required
+                ></textarea>
+              </li>
+              <li>
+                <input type="submit" className="flat-button" value="SEND" />
+              </li>
+            </ul>
+          </form>
         </div>
-        <div className="info-map">
-          New York,
-          <br />
-          Brooklyn,
-          <br />
-          United States <br />
-          
-          <span>stoverlee29@gmail.com</span>
-        </div>
-        <div className="map-wrap">
-          <MapContainer center={[40.689830574, -73.917829662]} zoom={13}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[40.689830574, -73.917829662]}>
-              <Popup>Lamont lives here :)</Popup>
-            </Marker>
-          </MapContainer>
+
+        <div className="info-zone">
+          <div className="location-blip">
+            <span>New York</span>
+            <span className="contact-email">stoverlee29@gmail.com</span>
+          </div>
+          <PortalAura variant="contact" />
         </div>
       </div>
+
       <Loader type="pacman" />
     </>
   )

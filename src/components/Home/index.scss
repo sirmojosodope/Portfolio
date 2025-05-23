@@ -4,78 +4,90 @@
     left: 10%;
     top: 50%;
     transform: translateY(-50%);
-    width: 40%;
-    max-height: 90%;
-  }
+    opacity: 0;
+    transition: opacity 1.5s ease 0.8s;
 
-  h1 {
-    color: #e0ddd7; // soft chalk white
-    font-size: 56px;
-    line-height: 53px;
-    margin: 0;
-    font-family: 'Coolvetica';
-    font-weight: 400;
-
-    &:before {
-      content: '<h1>';
-      font-family: 'La Belle Aurore', cursive;
-      color: #a8758b; // muted mauve
-      font-size: 18px;
-      position: absolute;
-      margin-top: -40px;
-      left: -15px;
-      opacity: 0.5;
+    &.visible {
+      opacity: 1;
     }
 
-    &:after {
-      content: '<h1/>';
-      font-family: 'La Belle Aurore', cursive;
-      color: #a8758b;
-      font-size: 18px;
-      position: absolute;
-      margin-top: 18px;
-      margin-left: 20px;
-      animation: fadeIn 1s 1.7s backwards;
-      opacity: 0.5;
+    h1.phase-text {
+      font-family: 'Coolvetica';
+      font-size: 64px;
+      color: #f7d417;
+      line-height: 1;
+      animation: flickerFade 2.8s ease-out forwards;
+      letter-spacing: -1px;
+
+      &::before {
+        content: '<h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 18px;
+        color: #f806cc66;
+        position: absolute;
+        transform: translateY(-40px);
+        opacity: 0.5;
+      }
+
+      &::after {
+        content: '</h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 18px;
+        color: #f806cc66;
+        position: absolute;
+        transform: translateY(12px) translateX(20px);
+        opacity: 0.5;
+      }
     }
 
-    img {
-      margin-left: 20px;
+    .sub-text {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #e0ddd7;
+      margin-top: 20px;
+      letter-spacing: 1px;
+      animation: fadeIn 2s ease 2s forwards;
       opacity: 0;
-      width: 32px;
-      height: auto;
-      animation: rotateIn 1s linear both;
-      animation-delay: 1.4s;
+    }
+
+    .flat-button {
+      margin-top: 40px;
+      padding: 10px 22px;
+      font-size: 12px;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #b69f94;
+      border: 1px solid #b69f94;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      transition: background 0.3s ease, color 0.3s ease;
+      display: inline-block;
+
+      &:hover {
+        background: #b69f94;
+        color: #1d1d1d;
+      }
     }
   }
+}
 
-  h2 {
-    color: #8a817c; // warm stone
-    margin-top: 20px;
-    font-weight: 400;
-    font-size: 11px;
-    font-family: sans-serif;
-    letter-spacing: 3px;
-    animation: fadeIn 1s 1.8s backwards;
+@keyframes flickerFade {
+  0% {
+    opacity: 0;
+    filter: brightness(150%);
   }
+  50% {
+    opacity: 0.3;
+    filter: brightness(180%);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(100%);
+  }
+}
 
-  .flat-button {
-    color: #b69f94; // muted rose
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    font-family: sans-serif;
-    text-decoration: none;
-    padding: 10px 18px;
-    border: 1px solid #b69f94;
-    margin-top: 25px;
-    float: left;
-    animation: fadeInAnimation 1s 1.8s backwards;
-    white-space: nowrap;
-
-    &:hover {
-      background: #b69f94;
-      color: #1d1d1d; // darkened base tone
-    }
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
