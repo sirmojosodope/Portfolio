@@ -1,5 +1,4 @@
 .nav-bar {
-  background: #1e1d1b;
   width: 60px;
   height: 100vh;
   position: fixed;
@@ -11,15 +10,21 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 0;
+  background: transparent;
+  backdrop-filter: blur(3px);
+  box-shadow: none;
+  border: none;
 
   .logo {
     img {
       width: 32px;
-      opacity: 0.85;
-      transition: transform 0.3s ease;
+      opacity: 0.7;
+      filter: grayscale(100%) brightness(1.2);
+      transition: transform 0.3s ease, opacity 0.3s ease;
 
       &:hover {
         transform: scale(1.1);
+        opacity: 1;
       }
     }
   }
@@ -33,19 +38,21 @@
     a {
       position: relative;
       font-size: 2rem;
-      color: #7a7470;
-      transition: color 0.3s ease;
+      color: #a59f94;
+      opacity: 0.4;
+      transition: color 0.3s ease, opacity 0.3s ease;
 
       &:hover,
       &.active {
         color: #f7d417;
+        opacity: 0.8;
 
-        &:after {
+        &::after {
           opacity: 1;
         }
 
         svg {
-          opacity: 0.4;
+          opacity: 0.5;
         }
       }
 
@@ -55,7 +62,8 @@
         left: 70px;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        font-family: 'Courier New', monospace;
         letter-spacing: 1px;
         color: #f7d417;
         opacity: 0;
@@ -64,10 +72,10 @@
       }
     }
 
-    .about-link::after    { content: 'ABOUT'; }
-    .contact-link::after  { content: 'CONTACT'; }
-    .portfolio-link::after{ content: 'PORTAL'; }
-    a:first-child::after  { content: 'HOME'; }
+    .about-link::after     { content: 'ABOUT'; }
+    .contact-link::after   { content: 'CONTACT'; }
+    .portfolio-link::after { content: 'PORTAL'; }
+    a:first-child::after   { content: 'HOME'; }
   }
 
   ul {
@@ -77,11 +85,13 @@
 
     li a {
       font-size: 1.6rem;
-      color: #7a7470;
-      transition: color 0.2s ease;
+      color: #a59f94;
+      opacity: 0.4;
+      transition: color 0.3s ease, opacity 0.3s ease;
 
       &:hover {
         color: #f7d417;
+        opacity: 0.8;
       }
     }
   }

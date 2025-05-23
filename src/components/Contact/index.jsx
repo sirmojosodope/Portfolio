@@ -20,7 +20,7 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs
-      .sendForm('gmail', 'template_xxxxxx', formRef.current, 'your-public-key')
+      .sendForm('gmail', 'template_xxxxxx', formRef.current, '7ieVoWvTEkJ3o-NKq')
       .then(() => {
         alert('Transmission sent.')
         window.location.reload()
