@@ -15,27 +15,7 @@
       color: #f7d417;
       margin: 0;
 
-      &:before {
-        content: '<h1>';
-        font-family: 'La Belle Aurore';
-        color: #f806cc66;
-        font-size: 18px;
-        position: absolute;
-        margin-top: -40px;
-        left: -15px;
-        opacity: 0.6;
-      }
-
-      &:after {
-        content: '</h1>';
-        font-family: 'La Belle Aurore';
-        color: #f806cc66;
-        font-size: 18px;
-        position: absolute;
-        margin-top: 18px;
-        margin-left: 20px;
-        opacity: 0.6;
-      }
+      
     }
 
     .ritual {

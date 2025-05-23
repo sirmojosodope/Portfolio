@@ -19,25 +19,7 @@
       animation: flickerFade 2.8s ease-out forwards;
       letter-spacing: -1px;
 
-      &::before {
-        content: '<h1>';
-        font-family: 'La Belle Aurore', cursive;
-        font-size: 18px;
-        color: #f806cc66;
-        position: absolute;
-        transform: translateY(-40px);
-        opacity: 0.5;
-      }
-
-      &::after {
-        content: '</h1>';
-        font-family: 'La Belle Aurore', cursive;
-        font-size: 18px;
-        color: #f806cc66;
-        position: absolute;
-        transform: translateY(12px) translateX(20px);
-        opacity: 0.5;
-      }
+    
     }
 
     .sub-text {
